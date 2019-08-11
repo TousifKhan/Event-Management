@@ -68,6 +68,37 @@ function doLogout()
 	exit();
 }
 
+
+//student or teacher will register
+function registerUser() {
+	$name 		= $_POST['name'];
+	$sql 		= $_POST['pwd'];
+	$address 	= $_POST['address'];
+	$phone 		= $_POST['phone'];
+	$email 		= $_POST['email'];
+	$type		= $_POST['type'];
+	
+	//TODO first check if that date has a holiday
+	$hsql	= "SELECT * FROM tbl_users WHERE name = '$name'";
+	$hresult = dbQuery($hsql);
+	if (dbNumRows($hresult) > 0) {
+		$errorMessage = 'User with same name already exist. Please try another day.';
+		header('Location: register.php?err=' . urlencode($errorMessage));
+		exit();
+	}
+	//$pwd = random_string();
+	$sql = "INSERT INTO tbl_users (name, pwd, address, phone, email, type, status, bdate)
+			VALUES ('$name', PASSWORD($pwd), '$address', '$phone', '$email', '$type', 'inactive', NOW())";	
+	dbQuery($sql);
+	
+	//send email on registration confirmation
+	$bodymsg = "User $name is registered and currently in INACTIVE state. Requesting you to contact admin take further action on user activation.<br/>Mbr/>Tousif Khan";
+	$data = array('to' => '$email', 'sub' => 'Booking on $rdate.', 'msg' => $bodymsg);
+	//send_email($data);
+	header('Location: register.php?msg=' . urlencode('User successfully registered.'));
+	exit();
+}
+
 function getBookingRecords(){
 	$per_page = 10;
 	$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;

@@ -3,6 +3,14 @@ require_once './library/config.php';
 require_once './library/functions.php';
 
 $errorMessage = '&nbsp;';
+$successMessage = '&nbsp;';
+if(isset($_GET['err'])) {
+	$errorMessage = urldecode($_GET['err']);
+}
+if(isset($_GET['msg'])) {
+	$successMessage = urldecode($_GET['msg']);
+}
+
 if (isset($_POST['name']) && isset($_POST['pwd'])) {
 	$result = registerUser();
 	if ($result != '') {
@@ -63,6 +71,11 @@ if (isset($_POST['name']) && isset($_POST['pwd'])) {
 		<div class="alert alert-danger alert-dismissable">
         	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-ban"></i> Alert!</h4><?php echo $errorMessage; ?>
+		</div>
+		<?php }else if($successMessage != "&nbsp;" ) {?>
+		<div class="alert alert-success alert-dismissable">
+        	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-ban"></i> Success!</h4><?php echo $successMessage; ?>
 		</div>
 		<?php } ?>
         <form action="" method="post">

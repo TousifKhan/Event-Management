@@ -75,7 +75,7 @@ if (isset($_POST['name']) && isset($_POST['pwd'])) {
           </div>
           <div class="row">
             <div class="col-xs-8">
-              
+              New User <a href="<?php echo WEB_ROOT; ?>register.php">Register</a> here.
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
