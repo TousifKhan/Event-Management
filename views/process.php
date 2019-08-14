@@ -48,7 +48,6 @@ function createUser() {
 	exit();
 }
 
-//http://localhost/houda/views/process.php?cmd=change&action=inactive&userId=1
 function changeStatus() {
 	$action 	= $_GET['action'];
 	$userId 	= (int)$_GET['userId'];
