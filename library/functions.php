@@ -37,8 +37,7 @@ function doLogin()
 	
 	$errorMessage = '';
 	
-	//$sql 	= "SELECT * FROM tbl_frontdesk_users WHERE username = '$name' AND pwd = PASSWORD('$pwd')";
-	$sql 	= "SELECT * FROM tbl_users WHERE name = '$name' AND pwd = PASSWORD('$pwd')";
+	$sql 	= "SELECT * FROM tbl_users WHERE name = '$name' AND pwd = PASSWORD('$pwd') AND status = 'active'";
 	$result = dbQuery($sql);
 	
 	if (dbNumRows($result) == 1) {
@@ -49,7 +48,7 @@ function doLogin()
 		exit();
 	}
 	else {
-		$errorMessage = 'Invalid username / passsword. Please try again or contact to support.';
+		$errorMessage = 'Invalid username / passsword or User is not active. Please try again or contact to support.';
 	}
 	return $errorMessage;
 }
