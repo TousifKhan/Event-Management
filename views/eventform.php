@@ -97,7 +97,7 @@
 </div>
 <!-- /.box -->
 <script type="text/javascript">
-<!--
+
 var sprytf_name 	= new Spry.Widget.ValidationSelect("sprytf_name");
 var sprytf_address 	= new Spry.Widget.ValidationTextarea("sprytf_address", {minChars:6, isRequired:true, validateOn:["blur", "change"]});
 var sprytf_phone 	= new Spry.Widget.ValidationTextField("sprytf_phone", 'none', {validateOn:["blur", "change"]});
@@ -105,10 +105,7 @@ var sprytf_mail 	= new Spry.Widget.ValidationTextField("sprytf_email", 'email', 
 var sprytf_rdate 	= new Spry.Widget.ValidationTextField("sprytf_rdate", "date", {format:"yyyy-mm-dd", useCharacterMasking: true, validateOn:["blur", "change"]});
 var sprytf_rtime 	= new Spry.Widget.ValidationTextField("sprytf_rtime", "time", {hint:"i.e 20:10", useCharacterMasking: true, validateOn:["blur", "change"]});
 var sprytf_ucount 	= new Spry.Widget.ValidationTextField("sprytf_ucount", "integer", {validateOn:["blur", "change"]});
-//-->
-</script>
 
-<script type="text/javascript">
 $('select').on('change', function() {
 	//alert( this.value );
 	var id = this.value;
