@@ -26,11 +26,13 @@ Following are the features available in the project:
 **Screenshots:**
 
 ***1) Login Page:***
+
 ![Login Page](http://www.techzoo.org/wp-content/uploads/2018/03/01-Event-Management-Login.png)		
 
 **2) Admin Dashboard**
+
 ![Admin Dashboard Screen](http://www.techzoo.org/wp-content/uploads/2018/03/02-Admin-Book-Event-1.png)
 
 **3) User Details**
-![User Event Registration Page](http://www.techzoo.org/wp-content/uploads/2018/03/03-User-Event-Details-1.png)
 
+![User Event Registration Page](http://www.techzoo.org/wp-content/uploads/2018/03/03-User-Event-Details-1.png)
